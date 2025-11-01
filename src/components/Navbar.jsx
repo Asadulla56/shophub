@@ -81,11 +81,7 @@ const Navbar = () => {
     { name: "Contact", path: "/contact" },
   ];
 
-  // Removed TypeScript type annotation
   const isActive = (path) => location.pathname === path;
-
-  // Replaced custom <Button> components with styled <button> elements.
-  // Using 'text-blue-600' as a generic stand-in for 'text-primary'.
   return (
     <nav className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/95 backdrop-blur">
       <div className="container mx-auto px-4">
@@ -155,7 +151,6 @@ const Navbar = () => {
               </Link>
             ))}
             <div className="pt-4 space-y-2">
-              {/* Mobile Actions - Replaced Button components */}
               <button
                 type="button"
                 className="inline-flex items-center justify-center px-3 py-1.5 text-sm font-medium rounded-md border border-gray-300 hover:bg-gray-100 w-full"
