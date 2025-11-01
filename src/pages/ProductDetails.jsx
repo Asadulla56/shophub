@@ -1,3 +1,4 @@
+import React from "react";
 import { useParams, Link } from "react-router-dom";
 import { ArrowLeft, Star, Heart, ShoppingCart } from "lucide-react";
 import productsData from "../../public/products.json";
@@ -44,16 +45,16 @@ const ProductDetails = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-
       <main className="flex-1">
         {/* Breadcrumb */}
         <section className="bg-gray-100 border-b">
           <div className="container mx-auto px-4 py-4">
             <Link
               to="/products"
-              className="inline-flex items-center gap-2 text-gray-600 hover:text-gray-900"
+              className="inline-flex items-center gap-2 bg-white px-5 py-3 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 text-gray-700 hover:text-indigo-600 font-medium group"
             >
-              <ArrowLeft className="h-4 w-4" /> Back to Products
+              <ArrowLeft className="h-5 w-5 transform group-hover:-translate-x-1 transition-transform duration-300" />
+              Back to Products
             </Link>
           </div>
         </section>
@@ -101,7 +102,6 @@ const ProductDetails = () => {
                     ${product.price.toFixed(2)}
                   </p>
                 </div>
-
                 <div className="border-t border-b py-6">
                   <p className="text-gray-700 leading-relaxed">
                     {product.description}
