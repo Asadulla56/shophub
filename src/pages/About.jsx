@@ -114,11 +114,9 @@ const team = [
   },
 ];
 
-
 const About = () => {
   return (
     <div className="font-sans text-gray-800">
-      
       <section className="relative bg-gradient-to-r from-indigo-600 to-indigo-400 text-white overflow-hidden">
         <div className="container mx-auto px-6 py-32 md:flex md:items-center md:justify-between">
           {/* Left Text */}
@@ -132,9 +130,9 @@ const About = () => {
             </p>
             <Link
               to="/products"
-              className="bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition"
+              className="bg-white hover:bg-orange-400 text-purple-600 px-6 py-3 rounded-lg font-semibold transition"
             >
-              Browse Products
+              View Products
             </Link>
           </div>
 
@@ -142,7 +140,7 @@ const About = () => {
           <div className="md:w-1/2 mt-12 md:mt-0 relative flex justify-center md:justify-end">
             <div className="w-full max-w-md bg-white rounded-3xl shadow-2xl overflow-hidden transform transition duration-500 hover:scale-105 hover:-translate-y-2">
               <img
-                src={heroImage} 
+                src={heroImage}
                 alt="ShopHub E-commerce"
                 className="w-full h-full object-cover"
               />
@@ -211,16 +209,19 @@ const About = () => {
           </div>
         </div>
       </section>
-      <section className="py-24 bg-gradient-to-r from-indigo-600 to-indigo-400 text-white text-center">
+      <section className="py-24 bg-gradient-to-r mb-5 from-indigo-600 to-indigo-400 text-white text-center">
         <h2 className="text-4xl font-bold">
           Start Your Shopping Journey Today
         </h2>
-        <p className="mt-4 text-lg">
+        <p className="mt-4 text-lg mb-5">
           Discover our premium products and enjoy a seamless experience.
         </p>
-        <button className="mt-8 bg-white text-indigo-600 px-10 py-3 rounded-xl font-semibold shadow-lg hover:scale-105 transition transform duration-300">
-          Browse All Products
-        </button>
+        <Link
+          to="/contact"
+          className="mt-8 bg-white text-indigo-600 hover:bg-orange-400 px-10 py-3 rounded-xl font-semibold shadow-lg hover:scale-105 transition transform duration-300"
+        >
+          Contact Us
+        </Link>
       </section>
     </div>
   );
