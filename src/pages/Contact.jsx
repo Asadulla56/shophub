@@ -35,9 +35,9 @@ const Contact = () => {
   };
 
   const contactInfo = [
-    { icon: Mail, title: "Email Us", content: "support@shophub.com", link: "mailto:support@shophub.com" },
+    { icon: Mail, title: "Email Us", content: "shophub21@gmail.com", link: "mailto:shophub21@gmail.com" },
     { icon: Phone, title: "Call Us", content: "+1 (555) 123-4567", link: "tel:+15551234567" },
-    { icon: MapPin, title: "Visit Us", content: "123 Commerce St, New York, NY 10001", link: "#" },
+    { icon: MapPin, title: "Visit Us", content: "123 Commerce St, Airport,Dhaka", link: "#" },
   ];
 
   return (
