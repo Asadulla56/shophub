@@ -5,12 +5,10 @@ import heroImage from "../assets/hero-image.jpg";
 const Hero = () => {
   return (
     <section className="relative bg-gray-900 text-white overflow-hidden">
-      {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-indigo-600 to-blue-600 opacity-50"></div>
 
       <div className="container mx-auto px-6 py-24 relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Text Content */}
           <div className="space-y-6">
             <h1 className="text-5xl md:text-6xl font-extrabold leading-tight">
               Elevate Your Style, Upgrade Your Life
@@ -35,7 +33,6 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Image + Floating Promo Card */}
           <div className="relative">
             <img
               src={heroImage}
@@ -43,7 +40,6 @@ const Hero = () => {
               className="w-full h-auto rounded-3xl shadow-2xl"
             />
 
-            {/* Floating Promo Card */}
             <div className="absolute -bottom-12 right-0 bg-white/90 rounded-xl p-6 shadow-lg w-72 hover:scale-105 transition-transform">
               <h3 className="font-bold text-gray-900 text-lg">Exclusive Deal</h3>
               <p className="text-gray-700 text-sm mt-2">

@@ -1,9 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-// Removed react-icons import to resolve the error.
-// Using inline SVGs instead.
-
 const IconShoppingBag = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -107,7 +104,6 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* Desktop Actions - Replaced Button components */}
           <div className="hidden md:flex items-center space-x-4">
             <button
               type="button"
@@ -123,8 +119,6 @@ const Navbar = () => {
               Cart (0)
             </button>
           </div>
-
-          {/* Mobile Menu Button - Replaced Button component */}
           <button
             type="button"
             className="inline-flex items-center justify-center rounded-lg w-9 h-9 hover:bg-gray-100 text-gray-700 md:hidden"
@@ -135,7 +129,6 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Mobile Navigation */}
         {isOpen && (
           <div className="md:hidden py-4 space-y-4">
             {navLinks.map((link) => (

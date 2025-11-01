@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
 
-// --- Inline SVG Components (to avoid import errors) ---
-
 const IconShoppingBag = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -66,14 +64,12 @@ const IconTwitter = (props) => (
   </svg>
 );
 
-// --- New Footer Component ---
-
 const Footer = () => {
   return (
     <footer className="bg-gray-900 text-gray-300">
       <div className="container mx-auto px-6 py-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-          {/* Brand & Social */}
+        
           <div className="space-y-4 md:col-span-1">
             <Link to="/" className="flex items-center space-x-2">
               <IconShoppingBag className="h-7 w-7 text-white" />
@@ -186,7 +182,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Newsletter Signup */}
           <div>
             <h3 className="font-semibold text-white mb-4 uppercase tracking-wider text-sm">
               Join Our Newsletter
@@ -198,7 +193,7 @@ const Footer = () => {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="w-full px-4 py-2 rounded-l-md focus:outline-none text-gray-800"
+                className="w-full px-4 py-2 rounded-l-md border focus:outline-none text-blue-800"
               />
               <button className="bg-blue-600 text-white px-4 py-2 rounded-r-md font-semibold hover:bg-blue-700 transition-colors">
                 Sign Up
@@ -208,7 +203,6 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Bottom Bar */}
       <div className="bg-gray-950/50 border-t border-gray-700">
         <div className="container mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center text-sm">
           <p className="text-gray-400">

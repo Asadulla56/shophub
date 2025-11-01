@@ -46,7 +46,6 @@ const ProductDetails = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <main className="flex-1">
-        {/* Breadcrumb */}
         <section className="bg-gray-100 border-b">
           <div className="container mx-auto px-4 py-4">
             <Link
