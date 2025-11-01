@@ -20,7 +20,7 @@ const Hero = () => {
             <div className="flex flex-wrap gap-4">
               <Link
                 to="/products"
-                className="bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition"
+                className="bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-orange-300 transition"
               >
                 Shop Now
               </Link>
