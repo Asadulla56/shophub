@@ -2,7 +2,6 @@ import { Link, useLocation } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
 import ProductCard from "../components/ProductCard";
 import productsData from "../../public/products.json";
-// import productImage from "../assets/hero-image.jpg";
 
 const Products = () => {
   const location = useLocation();
@@ -15,19 +14,19 @@ const Products = () => {
     <section className="py-16 bg-gray-100">
       <div className="container mx-auto px-4">
 <div className="relative text-center mb-16">
-  <div className="absolute inset-0 overflow-hidden rounded-3xl">
+  {/* <div className="absolute inset-0 overflow-hidden rounded-3xl">
     <img
-      src={'productImage'} 
-      alt="Products Banner"
+      src=''
+      alt=""
       className="w-full h-full object-cover object-center opacity-30"
     />
-  </div>
+  </div> */}
 
   <div className="relative z-10 px-4">
-    <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
+    <h2 className="text-3xl md:text-4xl font-bold mb-4 text-blue-600 ">
       {isProductsPage ? "All Products" : "Featured Products"}
     </h2>
-    <p className="text-gray-600 md:text-lg">
+    <p className="text-black md:text-lg">
       {isProductsPage
         ? "Explore all our collections and find your perfect product"
         : "Handpicked favorites just for you"}
