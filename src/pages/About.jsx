@@ -100,17 +100,17 @@ const team = [
   {
     name: "Alex Johnson",
     title: "CEO & Founder",
-    imageUrl:"/public/CEO.jpg",
+    imageUrl:"../assets/CEO.jpg",
   },
   {
     name: "Maria Garcia",
     title: "Head of Design",
-    imageUrl: "/public/head.jpg",
+    imageUrl: "../assets/head.jpg",
   },
   {
     name: "David Kim",
     title: "Lead Engineer",
-    imageUrl: "/public/designer.jpg",
+    imageUrl: "../assets/designer.jpg",
   },
 ];
 
