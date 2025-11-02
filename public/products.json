@@ -4,7 +4,7 @@
     "name": "Premium Wireless Headphones",
     "category": "Electronics",
     "price": 299.99,
-    "image": "../public/Headphones.jpg",
+    "image": "/placeholder.svg",
     "description": "Experience superior sound quality with active noise cancellation and 30-hour battery life.",
     "featured": true,
     "rating": 4.8
@@ -14,7 +14,7 @@
     "name": "Smart Fitness Watch",
     "category": "Electronics",
     "price": 249.99,
-    "image": "../public/download.jpg",
+    "image": "/placeholder.svg",
     "description": "Track your health and fitness goals with advanced sensors and GPS tracking.",
     "featured": true,
     "rating": 4.6
@@ -24,7 +24,7 @@
     "name": "Designer Leather Backpack",
     "category": "Fashion",
     "price": 189.99,
-    "image": "../public/Backpad.jpg",
+    "image": "/placeholder.svg",
     "description": "Premium leather backpack with laptop compartment and water-resistant coating.",
     "featured": true,
     "rating": 4.7
@@ -34,7 +34,7 @@
     "name": "Ultra HD 4K Camera",
     "category": "Electronics",
     "price": 899.99,
-    "image": "../public/camera.jpg",
+    "image": "/placeholder.svg",
     "description": "Professional-grade camera with 4K video recording and image stabilization.",
     "featured": false,
     "rating": 4.9
@@ -44,7 +44,7 @@
     "name": "Minimalist Running Shoes",
     "category": "Fashion",
     "price": 129.99,
-    "image": "../public/shoes.jpg",
+    "image": "/placeholder.svg",
     "description": "Lightweight running shoes with responsive cushioning and breathable mesh.",
     "featured": true,
     "rating": 4.5
@@ -54,7 +54,7 @@
     "name": "Smart Home Speaker",
     "category": "Electronics",
     "price": 179.99,
-    "image": "../public/Speaker.jpg",
+    "image": "/placeholder.svg",
     "description": "Voice-controlled smart speaker with premium audio and smart home integration.",
     "featured": false,
     "rating": 4.4
@@ -64,7 +64,7 @@
     "name": "Classic Aviator Sunglasses",
     "category": "Fashion",
     "price": 159.99,
-    "image": "../public/sunglasses.jpg",
+    "image": "/placeholder.svg",
     "description": "Timeless aviator design with polarized lenses and UV protection.",
     "featured": false,
     "rating": 4.6
@@ -74,7 +74,7 @@
     "name": "Ergonomic Office Chair",
     "category": "Home Decor",
     "price": 449.99,
-    "image": "/public/Ergonomic Office Chair.jpg",
+    "image": "/placeholder.svg",
     "description": "Premium ergonomic chair with lumbar support and breathable mesh.",
     "featured": true,
     "rating": 4.8
@@ -84,7 +84,7 @@
     "name": "Portable Bluetooth Speaker",
     "category": "Electronics",
     "price": 89.99,
-    "image": "/public/Bluetooth.jpg",
+    "image": "/placeholder.svg",
     "description": "Waterproof portable speaker with 12-hour battery life and 360° sound.",
     "featured": false,
     "rating": 4.3
@@ -94,7 +94,7 @@
     "name": "Modern Table Lamp",
     "category": "Home Decor",
     "price": 79.99,
-    "image": "/public/Modern Table Lamp.jpg",
+    "image": "/placeholder.svg",
     "description": "Elegant LED table lamp with adjustable brightness and USB charging port.",
     "featured": false,
     "rating": 4.5
@@ -104,7 +104,7 @@
     "name": "Professional Chef Knife Set",
     "category": "Home Decor",
     "price": 199.99,
-    "image": "/public/Professional Chef Knife Set.jpg",
+    "image": "/placeholder.svg",
     "description": "High-carbon stainless steel knives with ergonomic handles and wooden block.",
     "featured": false,
     "rating": 4.7
@@ -114,7 +114,7 @@
     "name": "Yoga Mat Premium",
     "category": "Sports & Fitness",
     "price": 59.99,
-    "image": "/public/placeholder.svg",
+    "image": "/placeholder.svg",
     "description": "Eco-friendly yoga mat with superior grip and extra cushioning.",
     "featured": true,
     "rating": 4.6
