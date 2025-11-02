@@ -14,13 +14,6 @@ const Products = () => {
     <section className="py-16 bg-gray-100">
       <div className="container mx-auto px-4">
 <div className="relative text-center mb-16">
-  {/* <div className="absolute inset-0 overflow-hidden rounded-3xl">
-    <img
-      src=''
-      alt=""
-      className="w-full h-full object-cover object-center opacity-30"
-    />
-  </div> */}
 
   <div className="relative z-10 px-4">
     <h2 className="text-3xl md:text-4xl font-bold mb-4 text-blue-600 ">

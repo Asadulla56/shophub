@@ -100,17 +100,17 @@ const team = [
   {
     name: "Alex Johnson",
     title: "CEO & Founder",
-    imageUrl: "https://placehold.co/400x400/E2E8F0/4A5568?text=Alex+J.",
+    imageUrl:"/public/CEO.jpg",
   },
   {
     name: "Maria Garcia",
     title: "Head of Design",
-    imageUrl: "https://placehold.co/400x400/E2E8F0/4A5568?text=Maria+G.",
+    imageUrl: "/public/head.jpg",
   },
   {
     name: "David Kim",
     title: "Lead Engineer",
-    imageUrl: "https://placehold.co/400x400/E2E8F0/4A5568?text=David+K.",
+    imageUrl: "/public/designer.jpg",
   },
 ];
 
