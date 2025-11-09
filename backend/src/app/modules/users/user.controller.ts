@@ -1,7 +1,6 @@
 import { Response, NextFunction } from "express";
 import { UserService } from "./user.service.js";
-// import { AuthRequest } from "../../middlewares/auth.middleware";
-// import { UserService } from "./user.service";
+import { AuthRequest } from "../../middlewares/auth.middleware.js";
 
 const getProfile = async (req: AuthRequest, res: Response, next: NextFunction) => {
   try {

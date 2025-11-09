@@ -1,7 +1,6 @@
 import { Response, NextFunction } from "express";
 import { CartService } from "./cart.service.js";
-// import { AuthRequest } from "../../middlewares/auth.middleware";
-// import { CartService } from "./cart.service";
+import { AuthRequest } from "../../middlewares/auth.middleware.js";
 
 // Get current user's cart
 const getCart = async (req: AuthRequest, res: Response, next: NextFunction) => {

@@ -1,21 +1,15 @@
+import express, { Application } from "express";
+import cors from "cors";
+import router from "./app/routes/index.js";
+import { errorHandler } from "./app/middlewares/error.middleware.js";
 
-import express, { type Application, type Request, type Response } from "express"
-import  cors from "cors"
+const app: Application = express();
 
-import dotenv from "dotenv";
-
-const app:Application = express()
-
-app.use (express.json());
 app.use(cors());
-dotenv.config();
+app.use(express.json());
+app.use("/api/v1", router);
 
-
-
-app.get('/', (req: Request, res: Response) => {
-  res.send('Hello World!')
-})
-
+// global error handler
+app.use(errorHandler);
 
 export default app;
-

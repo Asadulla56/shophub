@@ -1,18 +1,22 @@
 import mongoose from "mongoose";
-import app  from './index.js'; 
+import dotenv from "dotenv";
+import app from "./index.js";
+
+dotenv.config();
+
 const port = process.env.PORT || 5000;
 
 async function main() {
   try {
-    const mongouri = process.env.DB_URI;
-    if (!mongouri) throw new Error("DB_URI is not defined in .env");
+    await mongoose.connect(process.env.DB_URI as string);
+    console.log(" MongoDB connected");
 
-    await mongoose.connect(mongouri);
     app.listen(port, () => {
-      console.log(`Example app listening on port ${port}`);
+      console.log(` Server running on http://localhost:${port}`);
     });
-  } catch (err) {
-    console.error("Error connecting to MongoDB or starting server:", err);
+  } catch (error) {
+    console.error(" DB connection error:", error);
+    process.exit(1);
   }
 }
 
