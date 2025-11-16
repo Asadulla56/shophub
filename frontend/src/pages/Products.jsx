@@ -1,38 +1,78 @@
 import { Link, useLocation } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
 import ProductCard from "../components/ProductCard";
-import productsData from "../../public/products.json";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const Products = () => {
   const location = useLocation();
   const isProductsPage = location.pathname === "/products";
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await axios.get("http://localhost:5000/api/v1/products");
+        setProducts(response.data.data);
+        setLoading(false);
+      } catch (error) {
+        setError(error);
+        setLoading(false);
+      }
+    };
+
+    fetchProducts();
+  }, []);
+
   const productsToShow = isProductsPage
-    ? productsData
-    : productsData.filter((p) => p.featured).slice(0, 3);
+    ? products
+    : products.filter((p) => p.featured).slice(0, 3);
+
+  if (loading) {
+    return (
+      <section className="py-16 bg-gray-100">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-8">Loading...</h2>
+        </div>
+      </section>
+    );
+  }
+
+  if (error) {
+    return (
+      <section className="py-16 bg-gray-100">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-8">
+            Error fetching products: {error.message}
+          </h2>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="py-16 bg-gray-100">
       <div className="container mx-auto px-4">
-<div className="relative text-center mb-16">
-
-  <div className="relative z-10 px-4">
-    <h2 className="text-3xl md:text-4xl font-bold mb-4 text-blue-600 ">
-      {isProductsPage ? "All Products" : "Featured Products"}
-    </h2>
-    <p className="text-black md:text-lg">
-      {isProductsPage
-        ? "Explore all our collections and find your perfect product"
-        : "Handpicked favorites just for you"}
-    </p>
-  </div>
-</div>
-
+        <div className="relative text-center mb-16">
+          <div className="relative z-10 px-4">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-blue-600 ">
+              {isProductsPage ? "All Products" : "Featured Products"}
+            </h2>
+            <p className="text-black md:text-lg">
+              {isProductsPage
+                ? "Explore all our collections and find your perfect product"
+                : "Handpicked favorites just for you"}
+            </p>
+          </div>
+        </div>
 
         {/* Products Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
           {productsToShow.map((product, index) => (
             <div
-              key={product.id}
+              key={product._id}
               className="animate-fade-in"
               style={{ animationDelay: `${index * 100}ms` }}
             >

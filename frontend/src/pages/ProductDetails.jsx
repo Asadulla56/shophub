@@ -1,13 +1,83 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { ArrowLeft, Star, Heart, ShoppingCart } from "lucide-react";
-import productsData from "../../public/products.json";
 import { toast } from "sonner";
 import ProductCard from "../components/ProductCard";
+import axios from "axios";
 
 const ProductDetails = () => {
   const { id } = useParams();
-  const product = productsData.find((p) => p.id === Number(id));
+  const [product, setProduct] = useState(null);
+  const [relatedProducts, setRelatedProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchProduct = async () => {
+      try {
+        setLoading(true);
+        const response = await axios.get(`http://localhost:5000/api/v1/products/${id}`);
+        setProduct(response.data.data);
+        setLoading(false);
+      } catch (error) {
+        setError(error);
+        setLoading(false);
+      }
+    };
+
+    fetchProduct();
+  }, [id]);
+
+  useEffect(() => {
+    if (product) {
+      const fetchRelatedProducts = async () => {
+        try {
+          const response = await axios.get(
+            `http://localhost:5000/api/v1/products?category=${product.category}&limit=4`
+          );
+          setRelatedProducts(
+            response.data.data.filter((p) => p._id !== product._id)
+          );
+        } catch (error) {
+          console.error("Error fetching related products:", error);
+        }
+      };
+
+      fetchRelatedProducts();
+    }
+  }, [product]);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex flex-col">
+        <div className="flex-1 flex items-center justify-center">
+          <div className="text-center">
+            <h1 className="text-4xl font-bold mb-4">Loading...</h1>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen flex flex-col">
+        <div className="flex-1 flex items-center justify-center">
+          <div className="text-center">
+            <h1 className="text-4xl font-bold mb-4">
+              Error: {error.message}
+            </h1>
+            <Link
+              to="/products"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition"
+            >
+              <ArrowLeft className="h-4 w-4" /> Back to Products
+            </Link>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   if (!product) {
     return (
@@ -26,10 +96,6 @@ const ProductDetails = () => {
       </div>
     );
   }
-
-  const relatedProducts = productsData
-    .filter((p) => p.category === product.category && p.id !== product.id)
-    .slice(0, 4);
 
   const handleAddToCart = () => {
     toast.success("Added to cart!", {
@@ -151,7 +217,7 @@ const ProductDetails = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {relatedProducts.map((relatedProduct, index) => (
                   <div
-                    key={relatedProduct.id}
+                    key={relatedProduct._id}
                     className="animate-fade-in"
                     style={{ animationDelay: `${index * 100}ms` }}
                   >

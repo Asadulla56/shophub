@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import { FaStar, FaArrowRight } from "react-icons/fa";
 
-const ProductCard = ({ id, name, price, image, rating, category }) => {
+const ProductCard = ({ _id, name, price, image, rating, category }) => {
   return (
     <div className="group overflow-hidden rounded-xl border border-gray-200 hover:shadow-lg transition-all duration-300 bg-white">
-      <Link to={`/products/${id}`}>
+      <Link to={`/products/${_id}`}>
         <div className="relative overflow-hidden aspect-square bg-gray-100">
           <img
             src={image}
@@ -18,7 +18,7 @@ const ProductCard = ({ id, name, price, image, rating, category }) => {
       </Link>
 
       <div className="p-4">
-        <Link to={`/products/${id}`}>
+        <Link to={`/products/${_id}`}>
           <h3 className="font-semibold text-lg mb-2 group-hover:text-indigo-600 transition-colors line-clamp-1">
             {name}
           </h3>
@@ -39,7 +39,7 @@ const ProductCard = ({ id, name, price, image, rating, category }) => {
         <p className="text-2xl font-bold text-indigo-600">${price.toFixed(2)}</p>
 
         <Link
-          to={`/products/${id}`}
+          to={`/products/${_id}`}
           className="mt-4 inline-flex items-center justify-center w-full bg-indigo-600 text-white py-2 rounded-lg font-semibold hover:bg-indigo-700 transition"
         >
           View Details <FaArrowRight className="ml-2" />

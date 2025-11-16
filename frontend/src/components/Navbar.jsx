@@ -112,6 +112,14 @@ const Navbar = () => {
             >
               <IconSearch className="h-5 w-5" />
             </button>
+            <Link
+              to="/cart"
+              className="inline-flex items-center justify-center rounded-lg w-9 h-9 hover:bg-gray-100 text-gray-700"
+              aria-label="Cart"
+            >
+              <IconShoppingBag className="h-5 w-5" />
+              <span className="ml-1 text-xs font-bold">0</span>
+            </Link>
             <button
               type="button"
               className="inline-flex items-center justify-center px-3 py-1.5 text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700"
@@ -151,6 +159,13 @@ const Navbar = () => {
                 <IconSearch className="h-4 w-4 mr-2" />
                 Search
               </button>
+              <Link
+                to="/cart"
+                className="inline-flex items-center justify-center px-3 py-1.5 text-sm font-medium rounded-md border border-gray-300 hover:bg-gray-100 w-full"
+              >
+                <IconShoppingBag className="h-4 w-4 mr-2" />
+                Cart (0)
+              </Link>
               <button
                 type="button"
                 className="inline-flex items-center justify-center px-3 py-1.5 text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 w-full"
