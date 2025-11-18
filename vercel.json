@@ -3,19 +3,22 @@
   "builds": [
     {
       "src": "backend/src/index.ts",
-      "use": "@vercel/node"
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": ["backend/**/*"]
+      }
     },
     {
       "src": "frontend/package.json",
       "use": "@vercel/static-build",
-      "options": {
-        "cwd": "frontend"
+      "config": {
+        "distDir": "frontend/dist"
       }
     }
   ],
   "routes": [
     {
-      "src": "/api/v1/(.*)",
+      "src": "/api/(.*)",
       "dest": "backend/src/index.ts"
     },
     {
