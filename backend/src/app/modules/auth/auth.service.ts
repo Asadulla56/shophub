@@ -1,5 +1,6 @@
 import bcrypt from "bcrypt";
-import jwt from "jsonwebtoken";
+import jwt, { JwtPayload, Secret, SignOptions } from "jsonwebtoken";
+import type { StringValue } from "ms";
 import { IUser } from "../users/user.interface.js";
 import { User } from "../users/user.model.js";
 import { ApiError } from "../../utils/ApiError.js";
@@ -40,20 +41,23 @@ const validateUser = async (email: string, password: string) => {
 
 // Generate JWT token
 const generateToken = (user: { id: string; email: string }) => {
-  const secret = process.env.JWT_SECRET;
-  const expiresIn = process.env.JWT_EXPIRES_IN || "7d";
+  const secret = process.env.JWT_SECRET as Secret;
+  const expiresIn = (process.env.JWT_EXPIRES_IN || "7d") as StringValue;
 
   if (!secret) {
     throw new Error("JWT_SECRET is not defined");
   }
 
-  const token = jwt.sign(
-    { id: user.id, email: user.email },
-    secret as string,
-    { expiresIn: expiresIn as string }
-  );
+  const payload: JwtPayload = {
+    id: user.id,
+    email: user.email,
+  };
 
-  return token;
+  const options: SignOptions = {
+    expiresIn,
+  };
+
+  return jwt.sign(payload, secret, options);
 };
 
 export const AuthService = {
