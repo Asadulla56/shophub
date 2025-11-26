@@ -53,11 +53,11 @@ const generateToken = (user: { id: string; email: string }) => {
     email: user.email,
   };
 
-  const options: SignOptions = {
+  const options:SignOptions = {
     expiresIn,
   };
 
-  return jwt.sign(payload, secret, options);
+  return jwt.sign(payload,secret,options);
 };
 
 export const AuthService = {
